@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/nave.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player.png" type="Texture" id=2]
+[ext_resource path="res://ost/laser7 (online-audio-converter.com).wav" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 26.1832
+
+[node name="nave" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0.854378, 2.56313 )
+shape = SubResource( 1 )
+
+[node name="pos" type="Position2D" parent="."]
+position = Vector2( 0, -39.4335 )
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -13.386
+
